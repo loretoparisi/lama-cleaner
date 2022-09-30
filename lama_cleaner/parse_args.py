@@ -32,7 +32,7 @@ def parse_args():
         action="store_true",
         help="After first time Stable Diffusion model downloaded, you can add this arg and remove --hf_access_token",
     )
-    parser.add_argument("--device", default="cuda", type=str, choices=["cuda", "cpu"])
+    parser.add_argument("--device", default="cuda", type=str, choices=["cuda", "cpu", "mps", "auto"])
     parser.add_argument("--gui", action="store_true", help="Launch as desktop app")
     parser.add_argument(
         "--gui-size",

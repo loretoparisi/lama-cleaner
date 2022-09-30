@@ -9,6 +9,10 @@ import torch
 from loguru import logger
 from torch.hub import download_url_to_file, get_dir
 
+def auto_detect_device():
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    device = 'mps' if torch.backends.mps.is_available() else device
+    return device
 
 def get_cache_path_by_url(url):
     parts = urlparse(url)

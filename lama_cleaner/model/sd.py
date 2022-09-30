@@ -1,5 +1,5 @@
 import random
-
+import os
 import PIL.Image
 import cv2
 import numpy as np
@@ -83,6 +83,7 @@ class SD(InpaintModel):
             revision="fp16" if torch.cuda.is_available() else "main",
             torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
             use_auth_token=kwargs["hf_access_token"],
+            cache_dir=os.environ.get("CACHE_DIR", None),
             **model_kwargs
         )
         # https://huggingface.co/docs/diffusers/v0.3.0/en/api/pipelines/stable_diffusion#diffusers.StableDiffusionInpaintPipeline.enable_attention_slicing

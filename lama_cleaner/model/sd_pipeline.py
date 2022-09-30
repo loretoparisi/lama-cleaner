@@ -1,3 +1,4 @@
+import os
 import inspect
 from typing import List, Optional, Union, Callable
 
@@ -234,7 +235,7 @@ class StableDiffusionInpaintPipeline(DiffusionPipeline):
             padding="max_length",
             max_length=self.tokenizer.model_max_length,
             truncation=True,
-            return_tensors="pt",
+            return_tensors="pt"
         )
         text_encoder_device = self.text_encoder.device
 

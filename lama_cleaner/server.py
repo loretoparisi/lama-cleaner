@@ -17,6 +17,7 @@ from loguru import logger
 
 from lama_cleaner.model_manager import ModelManager
 from lama_cleaner.schema import Config
+from lama_cleaner.helper import auto_detect_device
 
 try:
     torch._C._jit_override_can_fuse_on_cpu(False)
@@ -211,6 +212,9 @@ def main(args):
     global device
     global input_image_path
 
+    if args.device == 'auto':
+        args.device = auto_detect_device()
+        
     device = torch.device(args.device)
     input_image_path = args.input
 
