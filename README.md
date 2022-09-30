@@ -64,7 +64,7 @@ Available arguments:
 | --sd-run-local    | Once the model as downloaded, you can pass this arg and remove `--hf_access_token`                                            |          |
 | --sd-disable-nsfw | Disable stable-diffusion NSFW checker.                                                                                        |          |
 | --sd-cpu-textencoder | Always run stable-diffusion TextEncoder model on CPU.                                                                         |          |
-| --device          | cuda or cpu                                                                                                                   | cuda     |
+| --device          | cuda, mps or cpu                                                                                                                   | cuda     |
 | --port            | Port for backend flask web server                                                                                             | 8080     |
 | --gui             | Launch lama-cleaner as a desktop application                                                                                  |          |
 | --gui_size        | Set the window size for the application                                                                                       | 1200 900 |
@@ -141,6 +141,12 @@ great online services [here](https://cleanup.pictures/).
 - Install dependencies:`cd lama_cleaner/app/ && yarn`
 - Start development server: `yarn start`
 - Build: `yarn build`
+
+### Apple Silicon
+To run on Apple Silicon gpu please set `export PYTORCH_ENABLE_MPS_FALLBACK=1` and run with `--device=mps`
+```
+lama-cleaner --model=lama --device=mps --port=8080
+```
 
 ## Docker
 
