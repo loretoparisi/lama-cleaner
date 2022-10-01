@@ -142,10 +142,10 @@ great online services [here](https://cleanup.pictures/).
 - Start development server: `yarn start`
 - Build: `yarn build`
 
-### Apple Silicon
-To run on Apple Silicon gpu run `lama-cleaner` with `--device=mps`
+### Stable Diffusion on Apple Silicon
+To run Stable Diffusion Inpaint on Apple Silicon gpu run `lama-cleaner` with `--device=mps`
 ```
-lama-cleaner --model=lama --device=mps --port=8080
+lama-cleaner --model=sd1.4 --device=mps --port=8080
 ```
 
 ## Docker
