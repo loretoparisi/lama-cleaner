@@ -1,6 +1,9 @@
 import setuptools
 from pathlib import Path
 
+import os
+os.system("export PYTORCH_ENABLE_MPS_FALLBACK=1")
+
 web_files = Path("lama_cleaner/app/build/").glob("**/*")
 web_files = [str(it).replace("lama_cleaner/", "") for it in web_files]
 

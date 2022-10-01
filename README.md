@@ -143,7 +143,7 @@ great online services [here](https://cleanup.pictures/).
 - Build: `yarn build`
 
 ### Apple Silicon
-To run on Apple Silicon gpu please set `export PYTORCH_ENABLE_MPS_FALLBACK=1` and run with `--device=mps`
+To run on Apple Silicon gpu run `lama-cleaner` with `--device=mps`
 ```
 lama-cleaner --model=lama --device=mps --port=8080
 ```
